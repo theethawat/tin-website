@@ -1,21 +1,47 @@
 import Head from "next/head"
 import axios from "axios"
-import Navbar from "../components/Navbar.js"
+import NextLink from "next/link"
+import Layout from "../layout/FrontLayout"
+import { Avatar, Box, Divider, Link } from "@chakra-ui/react"
+import Config from "../config.json"
+import _ from "lodash"
 
 export default function Home({ blogs, error }) {
   if (error) {
     return <div>Something is Error {error.message}</div>
   }
+  let filteredBlog = _.take(blogs, 5)
   return (
-    <div className=''>
-      <Navbar />
-
-      <div className='container mx-auto'>
-        {blogs.map((blog) => (
-          <li key={blog.id}> {blog.Title} </li>
+    <Layout>
+      <div className='my-2'>
+        <h2 className='font-display font-semibold text-2xl mb-2'>บทความ</h2>
+        {filteredBlog.map((blog) => (
+          <Box
+            key={blog.id}
+            padding='4'
+            borderRadius='lg'
+            className='shadow-md lg:w-10/12'
+          >
+            {" "}
+            <Link className='text-lg font-medium font-display text-gray-500'>
+              <NextLink href={"/blog/" + encodeURIComponent(blog.SlugLink)}>
+                {blog.Title}
+              </NextLink>
+            </Link>
+            <p className='text-gray-400 mb-3'>{blog.Placeholder}</p>
+            <Divider className='my-2' />
+            <div className='flex gap-2 my-2'>
+              <Avatar
+                src={Config.apiURl + blog.AuthorImage}
+                name={blog.Author}
+                size='sm'
+              />
+              <h5 className='align-middle self-center'> {blog.Author} </h5>
+            </div>
+          </Box>
         ))}
       </div>
-    </div>
+    </Layout>
   )
 }
 

@@ -18,6 +18,8 @@ module.exports = {
         800: "#107249",
         900: "#105d3e",
       },
+      gray: colors.gray,
+      white: colors.white,
       steel: {
         50: "#f2fafb",
         100: "#ddf7fa",
