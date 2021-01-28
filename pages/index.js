@@ -24,7 +24,7 @@ export default function Home({ blogs, error }) {
           >
             {" "}
             <Link className='text-lg font-medium font-display text-gray-500'>
-              <NextLink href={"/blog/" + encodeURIComponent(blog.SlugLink)}>
+              <NextLink href={"/blogs/" + encodeURIComponent(blog.id)}>
                 {blog.Title}
               </NextLink>
             </Link>
@@ -47,7 +47,7 @@ export default function Home({ blogs, error }) {
 
 Home.getInitialProps = async (ctx) => {
   try {
-    const res = await axios.get("http://localhost:1337/blogs")
+    const res = await axios.get(Config.apiURl + "/blogs")
     const blogs = res.data
     return { blogs }
   } catch (error) {
