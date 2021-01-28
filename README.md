@@ -2,6 +2,9 @@
 
 Next Main Website of The Duck Creator, using Next.js and Strapi.
 
+![Screenshot of Developing Website](/screenshot/1.png)
+Screenshots
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

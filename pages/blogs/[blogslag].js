@@ -3,6 +3,8 @@ import { useRouter } from "next/router"
 import axios from "axios"
 import Layout from "../../layout/BlogLayout"
 import _ from "lodash"
+import { Avatar, Divider } from "@chakra-ui/react"
+import MDXComponent from "../../components/MDXComponent"
 export default function BlogPost({ blog, error }) {
   const router = useRouter()
   if (router.isFallback) {
@@ -17,7 +19,21 @@ export default function BlogPost({ blog, error }) {
 
   return (
     <Layout title={blog.Title}>
-      <div></div>
+      <div className='my-4'>
+        <div className=' mt-8'>
+          <MDXComponent>{blog.Content}</MDXComponent>
+        </div>
+        <br />
+        <Divider className='my-2' />
+        <div className='flex gap-2 my-2'>
+          <Avatar
+            src={config.apiURl + blog.AuthorImage}
+            name={blog.Author}
+            size='sm'
+          />
+          <h5 className='align-middle self-center'> {blog.Author} </h5>
+        </div>
+      </div>
     </Layout>
   )
 }
