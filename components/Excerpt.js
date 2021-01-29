@@ -1,3 +1,4 @@
+import Link from "next/link"
 export default function Excerpt({}) {
   return (
     <div className='w-full flex justify-center'>
@@ -25,9 +26,11 @@ export default function Excerpt({}) {
               text-white cursor-pointer   hover:from-shamrock-500 hover:via-shamrock-700 hover:to-shamrock-800
             '
             >
-              <h6 className='place-self-center font-display text-xl'>
-                เกี่ยวกับเรา{" "}
-              </h6>
+              <Link href='/about'>
+                <h6 className='place-self-center font-display text-xl'>
+                  เกี่ยวกับเรา
+                </h6>
+              </Link>
             </div>
           </div>
         </div>

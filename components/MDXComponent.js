@@ -29,8 +29,16 @@ export default function MDXComponent({ children }) {
       if (level === 5) return <h5 className='text-lg'> {children} </h5>
       if (level === 7) return <h6 className='text-lg'> {children} </h6>
     },
+    paragraph: ({ children }) => {
+      return <p className='my-3'> {children} </p>
+    },
   }
   return (
-    <ReactMarkdown children={children} plugins={[gfm]} renderers={renderer} />
+    <ReactMarkdown
+      className='gap-y-3'
+      children={children}
+      plugins={[gfm]}
+      renderers={renderer}
+    />
   )
 }

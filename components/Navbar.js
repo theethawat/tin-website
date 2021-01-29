@@ -1,15 +1,27 @@
+import React, { useState } from "react"
+import Link from "next/link"
 export default function Navbar({}) {
+  const [openNavDrawer, setOpenNavDrawer] = useState(false)
   return (
     <div className='lg:sticky lg:top-0 '>
       <nav className='flex items-center justify-between flex-wrap p-6 bg-steel-50 '>
         <div className='flex items-center flex-no-shrink  mr-6'>
-          <img src='/tdclogo.png' alt='TheDuckCreatorLogo' className='h-6' />
+          <Link href='/'>
+            <img
+              src='/tdclogo.png'
+              alt='TheDuckCreatorLogo'
+              className='h-6 cursor-pointer'
+            />
+          </Link>
           <span className='font-semibold font-display text-xl tracking-tight px-2'>
-            TheDuckCreator
-          </span>
-        </div>
+            <Link href='/'>TheDuckCreator</Link>
+          </span>{" "}
+        </div>{" "}
         <div className='block lg:hidden '>
-          <button className='flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white'>
+          <button
+            onClick={() => setOpenNavDrawer(!openNavDrawer)}
+            className='flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white'
+          >
             <svg
               className='h-3 w-3'
               viewBox='0 0 20 20'
@@ -21,7 +33,13 @@ export default function Navbar({}) {
           </button>
         </div>
         <div className='w-full block flex-grow lg:flex lg:items-center lg:w-auto'>
-          <div className='text-sm lg:flex-grow'>
+          <div
+            className={
+              openNavDrawer === true
+                ? "text-sm  lg:flex lg:flex-grow"
+                : "hidden text-sm  lg:flex lg:flex-grow"
+            }
+          >
             <a
               href='#responsive-header'
               className='block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
@@ -32,7 +50,7 @@ export default function Navbar({}) {
               href='#responsive-header'
               className='block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
             >
-              เกี่ยวกับ
+              <Link href='/about'>เกี่ยวกับ </Link>
             </a>
             <a
               href='#responsive-header'
