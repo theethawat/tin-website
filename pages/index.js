@@ -24,7 +24,6 @@ export default function Home({ blogs, error }) {
           content='The Duck Creator,TDC, ซอฟต์แวร์, ทำเล่นๆ'
         />
         <meta name='author' content='Theethawat Savastham' />
-
         <meta name='OG:image' content='/ogtag.jpg' />
       </Head>
       <div className='my-2'>

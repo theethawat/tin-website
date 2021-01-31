@@ -14,6 +14,7 @@ export default function about({ aboutPage, error }) {
     <Layout title='เกี่ยวกับเรา'>
       <Head>
         <title> เกี่ยวกับเรา - About</title>
+
         <meta name='OG:image' content='/ogtag.jpg' />
       </Head>
       <div className='my-4'>

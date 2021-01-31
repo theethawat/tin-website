@@ -1,5 +1,6 @@
 import "../styles/globals.css"
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import Head from "next/head"
 const theme = extendTheme({
   colors: {
     brand: {
@@ -19,9 +20,14 @@ const theme = extendTheme({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <>
+      <Head>
+        <link rel='icon' href='/logo.png' />
+      </Head>
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>{" "}
+    </>
   )
 }
 
