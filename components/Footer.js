@@ -55,8 +55,8 @@ export default function Foorter({}) {
         &copy; {moment().format("YYYY")} The Duck Creator, with{" "}
         <FontAwesomeIcon icon={faHeart} /> Using{" "}
         <a href='https://nextjs.org'>Next.JS</a> and{" "}
-        <a href='https://strapi.io'>Strapi</a>
-        <br /> Deploy on <a href='https://www.netlify.com/'>Netlify </a>
+        <a href='https://strapi.io'>Strapi</a>, Deploy on{" "}
+        <a href='https://www.netlify.com/'>Netlify </a>
         <br /> <span className='text-sm'>This work is licensed under a </span>
         <a
           rel='license'
