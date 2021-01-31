@@ -56,6 +56,7 @@ export default function Foorter({}) {
         <FontAwesomeIcon icon={faHeart} /> Using{" "}
         <a href='https://nextjs.org'>Next.JS</a> and{" "}
         <a href='https://strapi.io'>Strapi</a>
+        <br /> Deploy on <a href='https://www.netlify.com/'>Netlify </a>
         <br /> <span className='text-sm'>This work is licensed under a </span>
         <a
           rel='license'
