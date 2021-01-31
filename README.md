@@ -1,6 +1,8 @@
 # TDC-Next
 
-Next Main Website of The Duck Creator, using Next.js and Strapi.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/39a07fab-cb85-4178-adcd-6c9d9e4a27c4/deploy-status)](https://app.netlify.com/sites/tdc-mainsite/deploys)
+
+Next Main Website of The Duck Creator, using Next.js and Strapi, Deploy in Netlify App live now at [theduckcreator.in.th](https://theduckcreator.in.th)
 
 ![Screenshot of Developing Website](/screenshot/1.png)
 Screenshots
