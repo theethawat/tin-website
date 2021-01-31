@@ -33,7 +33,7 @@ export default function Home({ blogs, error }) {
             key={blog.id}
             padding='4'
             borderRadius='lg'
-            className='shadow-md lg:w-10/12'
+            className='shadow-md lg:w-9/12 mx-4'
           >
             {" "}
             <Link className='text-lg font-medium font-display text-gray-500'>

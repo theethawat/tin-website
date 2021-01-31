@@ -10,10 +10,10 @@ export default function MainLayout({ children }) {
       <Navbar />
       <Hero />
       <Excerpt />
-      <div className='container mx-auto'>
-        <div className='flex flex-wrap lg:flex-nowrap w-full min-h-screen'>
-          <div className='w-full lg:w-3/4 mx-4'>{children}</div>
-          <div className='w-full lg:w-1/4'>
+      <div className='container mx-auto min-mx-10 '>
+        <div className='flex flex-wrap md:flex-nowrap w-full min-h-screen mx-8'>
+          <div className='w-full md:w-3/4 mx-4'>{children}</div>
+          <div className='w-full md:w-1/4'>
             <FacebookPage />
           </div>
         </div>
