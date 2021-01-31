@@ -5,7 +5,11 @@ import {
   faGithub,
   faMedium,
 } from "@fortawesome/free-brands-svg-icons"
-import { faHeart, faMailBulk } from "@fortawesome/free-solid-svg-icons"
+import {
+  faEnvelope,
+  faHeart,
+  faMailBulk,
+} from "@fortawesome/free-solid-svg-icons"
 import moment from "moment"
 export default function Foorter({}) {
   return (
@@ -43,7 +47,7 @@ export default function Foorter({}) {
           {" "}
           <a href='mailto:theduckcreator@gmail.com'>
             {" "}
-            <FontAwesomeIcon icon={faMailBulk} />{" "}
+            <FontAwesomeIcon icon={faEnvelope} />{" "}
           </a>
         </h5>
       </div>
