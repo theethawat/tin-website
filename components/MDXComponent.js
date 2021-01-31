@@ -17,11 +17,11 @@ export default function MDXComponent({ children }) {
     heading: ({ level, node, children }) => {
       if (level === 1)
         return (
-          <h1 className='text-3xl font-semibold font-display'> {children} </h1>
+          <h1 className='text-2xl font-semibold font-display'> {children} </h1>
         )
       if (level === 2)
         return (
-          <h2 className='text-2xl font-semibold font-display'> {children} </h2>
+          <h2 className='text-xl font-medium font-display'> {children} </h2>
         )
       if (level === 3)
         return <h3 className='text-xl font-display'> {children} </h3>
@@ -30,7 +30,7 @@ export default function MDXComponent({ children }) {
       if (level === 7) return <h6 className='text-lg'> {children} </h6>
     },
     paragraph: ({ children }) => {
-      return <p className='my-3'> {children} </p>
+      return <p className='my-2'> {children} </p>
     },
   }
   return (

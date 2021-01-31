@@ -13,6 +13,20 @@ export default function Home({ blogs, error }) {
   let filteredBlog = _.take(blogs, 5)
   return (
     <Layout>
+      <Head>
+        <title> The Duck Creator - Create For Better</title>
+        <meta
+          name='description'
+          content='Space ซอฟต์แวร์เล็ก ๆ จากการทำอะไรเล่น ๆ ในงานที่ใครไม่ต้องการแต่เราต้องการ สู่การนำความรู้ มาสร้างสิ่งดี ๆ ให้เกิดกับสังคม'
+        />
+        <meta
+          name='keywords'
+          content='The Duck Creator,TDC, ซอฟต์แวร์, ทำเล่นๆ'
+        />
+        <meta name='author' content='Theethawat Savastham' />
+
+        <meta name='OG:image' content='/ogtag.jpg' />
+      </Head>
       <div className='my-2'>
         <h2 className='font-display font-semibold text-2xl mb-2'>บทความ</h2>
         {filteredBlog.map((blog) => (

@@ -3,6 +3,7 @@ import MDXComponent from "../components/MDXComponent"
 import config from "../config.json"
 import _ from "lodash"
 import axios from "axios"
+import Head from "next/head"
 
 export default function about({ aboutPage, error }) {
   if (error) {
@@ -11,6 +12,10 @@ export default function about({ aboutPage, error }) {
 
   return (
     <Layout title='เกี่ยวกับเรา'>
+      <Head>
+        <title> เกี่ยวกับเรา - About</title>
+        <meta name='OG:image' content='/ogtag.jpg' />
+      </Head>
       <div className='my-4'>
         <div className=' mt-8'>
           <MDXComponent>{aboutPage.Content}</MDXComponent>

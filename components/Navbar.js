@@ -44,7 +44,7 @@ export default function Navbar({}) {
               href='#responsive-header'
               className='block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
             >
-              บล็อก
+              <Link href='/blog'>บล็อก </Link>
             </a>
             <a
               href='#responsive-header'
@@ -56,10 +56,10 @@ export default function Navbar({}) {
               href='#responsive-header'
               className='block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
             >
-              แฟ้มสะสมงาน
-            </a>
+              <Link href='/portfolio'>แฟ้มสะสมงาน </Link>
+            </a>{" "}
             <a
-              href='#responsive-header'
+              href='https://dev.theduckcreator.in.th'
               className='block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white'
             >
               Server
