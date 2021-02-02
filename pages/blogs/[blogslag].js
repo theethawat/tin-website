@@ -54,16 +54,6 @@ export default function BlogPost({ blog, error }) {
   )
 }
 
-export async function getStaticProps({ params }) {
-  try {
-    const res = await axios.get(config.apiURl + "/blogs/" + params.blogslag)
-    const blog = await res.data
-    return { props: { blog } }
-  } catch (error) {
-    return { props: { error } }
-  }
-}
-
 export async function getStaticPaths() {
   const res = await axios.get(config.apiURl + "/blogs")
   const allBlogs = await res.data
@@ -71,7 +61,17 @@ export async function getStaticPaths() {
     params: { blogslag: blog.id.toString() },
   }))
   return {
-    paths,
+    paths: paths,
     fallback: true,
+  }
+}
+
+export async function getStaticProps({ params }) {
+  try {
+    const res = await axios.get(config.apiURl + "/blogs/" + params.blogslag)
+    const blog = await res.data
+    return { props: { blog }, revalidate: 1 }
+  } catch (error) {
+    return { props: { error } }
   }
 }

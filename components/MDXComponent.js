@@ -32,6 +32,9 @@ export default function MDXComponent({ children }) {
     paragraph: ({ children }) => {
       return <p className='my-2'> {children} </p>
     },
+    code: ({ language, value }) => {
+      return <pre className='bg-gray-50 font-mono w-2/3 p-1'> {value} </pre>
+    },
   }
   return (
     <ReactMarkdown
