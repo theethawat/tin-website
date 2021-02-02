@@ -7,10 +7,10 @@ export default function MainLayout({ children, title }) {
     <div>
       <Navbar />
       <PageHero title={title} />
-      <div className='container mx-auto'>
-        <div className='flex flex-wrap md:flex-nowrap w-full min-h-screen mx-8'>
-          <div className='sm:w-full md:w-3/4 mx-4'>{children}</div>
-          <div className='sm:w-full md:w-1/4'>
+      <div className='px-5'>
+        <div className=' w-full  lg:flex  justify-center min-h-screen '>
+          <div className='w-full lg:w-2/3  px-4 '>{children}</div>
+          <div className='w-full lg:w-1/4 px-4 '>
             <FacebookPage />
           </div>
         </div>
