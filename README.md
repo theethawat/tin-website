@@ -1,8 +1,6 @@
-# TDC-Next
+# Tin Official Website
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/39a07fab-cb85-4178-adcd-6c9d9e4a27c4/deploy-status)](https://app.netlify.com/sites/tdc-mainsite/deploys)
-
-Next Main Website of The Duck Creator, using Next.js and Strapi, Deploy in Netlify App live now at [theduckcreator.in.th](https://theduckcreator.in.th)
+Official Main Webiste of Tin Theethawat Savastham, using Next.js and Strapi, Deploy in Vercel App live now at [theethawat.theduckcreator.in.th](https://theethawat.theduckcreator.in.th)
 
 ![Screenshot of Developing Website](/screenshot/1.png)
 Screenshots
@@ -22,22 +20,3 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
