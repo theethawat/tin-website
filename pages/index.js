@@ -1,23 +1,25 @@
-import Head from "next/head"
-import axios from "axios"
-import NextLink from "next/link"
-import Layout from "../layout/FrontLayout"
-import { Avatar, Box, Divider, Link } from "@chakra-ui/react"
-import Config from "../config.json"
-import _ from "lodash"
+import _ from "lodash";
+import Head from "next/head";
+import axios from "axios";
+import NextLink from "next/link";
+import { Avatar, Box, Link } from "@chakra-ui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import Layout from "../layout/FrontLayout";
+import Config from "../config.json";
 
-export default function Home({ blogs, error }) {
+export default function Home({ blogs, error, excerpt }) {
   if (error) {
-    return <div>Something is Error {error.message}</div>
+    return <div>Something is Error {error.message}</div>;
   }
-  let filteredBlog = _.take(blogs, 5)
+  let filteredBlog = _.take(blogs, 5);
   return (
-    <Layout>
+    <Layout excerpt={excerpt}>
       <Head>
-        <title> The Duck Creator - Create For Better</title>
+        <title> TheethawatSpace@TDC </title>
         <meta
           name='description'
-          content='Space ซอฟต์แวร์เล็ก ๆ จากการทำอะไรเล่น ๆ ในงานที่ใครไม่ต้องการแต่เราต้องการ สู่การนำความรู้ มาสร้างสิ่งดี ๆ ให้เกิดกับสังคม'
+          content='Space เล็กๆ ของ ติน ธีร์ธวัช สวาสดิ์ธรรม'
         />
         <meta
           name='keywords'
@@ -26,23 +28,28 @@ export default function Home({ blogs, error }) {
         <meta name='author' content='Theethawat Savastham' />
         <meta name='OG:image' content='/ogtag.jpg' />
       </Head>
+
       <div className='my-2'>
-        <h2 className='font-display font-semibold text-2xl mb-2'>บทความ</h2>
+        <h2 className='font-display font-semibold  text-3xl mb-2'>
+          บทความ / Articles
+        </h2>
         {filteredBlog.map((blog) => (
           <Box
             key={blog.id}
             padding='4'
             borderRadius='lg'
-            className='shadow-md lg:w-9/12 mx-4'
+            className='shadow-lg  lg:w-9/12 my-4'
           >
             {" "}
-            <Link className='text-lg font-medium font-display text-gray-500'>
+            <Link className='text-2xl  font-medium font-dismono text-gray-500'>
               <NextLink href={"/blogs/" + encodeURIComponent(blog.id)}>
-                {blog.Title}
+                <div>
+                  {" "}
+                  <FontAwesomeIcon icon={faCaretRight} /> {blog.Title}
+                </div>
               </NextLink>
             </Link>
-            <p className='text-gray-400 mb-3'>{blog.Placeholder}</p>
-            <Divider className='my-2' />
+            <p className='text-gray-600 my-4 text-lg'>{blog.Placeholder}</p>
             <div className='flex gap-2 my-2'>
               <Avatar
                 src={Config.apiURl + blog.AuthorImage}
@@ -55,15 +62,21 @@ export default function Home({ blogs, error }) {
         ))}
       </div>
     </Layout>
-  )
+  );
 }
 
 Home.getInitialProps = async (ctx) => {
   try {
-    const res = await axios.get(Config.apiURl + "/blogs")
-    const blogs = res.data
-    return { blogs }
+    const res = await axios.get(Config.apiURl + "/blogs");
+    const excerptRes = await axios.get(Config.apiURl + "/pages");
+
+    const blogs = res.data;
+    const excerpt = _.find(
+      excerptRes.data,
+      (page) => page.SlagLink === "excerpt"
+    );
+    return { blogs, excerpt };
   } catch (error) {
-    return { error }
+    return { error };
   }
-}
+};

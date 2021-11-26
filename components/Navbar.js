@@ -1,20 +1,13 @@
-import React, { useState } from "react"
-import Link from "next/link"
+import React, { useState } from "react";
+import Link from "next/link";
 export default function Navbar({}) {
-  const [openNavDrawer, setOpenNavDrawer] = useState(false)
+  const [openNavDrawer, setOpenNavDrawer] = useState(false);
   return (
     <div className='lg:sticky lg:top-0 '>
       <nav className='flex items-center justify-between flex-wrap p-6 bg-steel-50 '>
         <div className='flex items-center flex-no-shrink  mr-6'>
-          <Link href='/'>
-            <img
-              src='/tdclogo.png'
-              alt='TheDuckCreatorLogo'
-              className='h-6 cursor-pointer'
-            />
-          </Link>
-          <span className='font-semibold font-display text-xl tracking-tight px-2'>
-            <Link href='/'>TheDuckCreator</Link>
+          <span className='font-semibold font-dismono italic text-xl tracking-tight px-2'>
+            <Link href='/'>theethawatSpace @TDC</Link>
           </span>{" "}
         </div>{" "}
         <div className='block lg:hidden '>
@@ -80,5 +73,5 @@ export default function Navbar({}) {
         </div>
       </nav>{" "}
     </div>
-  )
+  );
 }

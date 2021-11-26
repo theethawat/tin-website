@@ -1,5 +1,5 @@
-const colors = require("tailwindcss/colors")
-const plugin = require("tailwindcss/plugin")
+const colors = require("tailwindcss/colors");
+const plugin = require("tailwindcss/plugin");
 module.exports = {
   purge: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -135,6 +135,7 @@ module.exports = {
     },
     fontFamily: {
       display: ["kanit", "sans-serif"],
+      dismono: ["Fira Code", "kanit"],
       mono: ["Consolas", "Menlo", "Fira Code", "Noto Sans Mono", "Monospaced"],
     },
   },
@@ -142,4 +143,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};
