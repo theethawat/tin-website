@@ -70,7 +70,7 @@ Home.getInitialProps = async (ctx) => {
     const res = await axios.get(Config.apiURl + "/blogs");
     const excerptRes = await axios.get(Config.apiURl + "/pages");
 
-    const blogs = res.data;
+    const blogs = _.reverse(res.data);
     const excerpt = _.find(
       excerptRes.data,
       (page) => page.SlagLink === "excerpt"

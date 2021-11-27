@@ -1,15 +1,15 @@
-import Layout from "../layout/PageLayout"
-import config from "../config.json"
-import _ from "lodash"
-import axios from "axios"
-import NextLink from "next/link"
-import { Divider, Link, Box, Avatar } from "@chakra-ui/react"
-import moment from "moment"
-import "moment/locale/th"
-import Head from "next/head"
+import Layout from "../layout/PageLayout";
+import config from "../config.json";
+import _ from "lodash";
+import axios from "axios";
+import NextLink from "next/link";
+import { Divider, Link, Box, Avatar } from "@chakra-ui/react";
+import moment from "moment";
+import "moment/locale/th";
+import Head from "next/head";
 export default function about({ blogs, error }) {
   if (error) {
-    return <Layout>Something Went Wrong ?</Layout>
+    return <Layout>Something Went Wrong ?</Layout>;
   }
 
   return (
@@ -59,17 +59,17 @@ export default function about({ blogs, error }) {
         ))}
       </div>
     </Layout>
-  )
+  );
 }
 
 export async function getServerSideProps(context) {
   try {
-    const res = await axios.get(config.apiURl + "/blogs")
-    const blogs = await res.data
+    const res = await axios.get(config.apiURl + "/blogs");
+    const blogs = _.reverse(res.data);
     return {
       props: { blogs },
-    }
+    };
   } catch (error) {
-    return { prop: error }
+    return { prop: error };
   }
 }
