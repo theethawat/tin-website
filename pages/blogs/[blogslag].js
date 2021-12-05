@@ -30,11 +30,11 @@ export default function BlogPost({ blog, error }) {
           <meta name='OG:image' content={config.apiURl + blog.MainMedia} />
         </Head>
         <div className=' mt-8'>
-          <h1 className='text-4xl font-semibold font-display '>
+          <h1 className='text-4xl font-semibold px-4 font-display '>
             {" "}
             {blog.Title}{" "}
           </h1>{" "}
-          <div className='flex gap-2 my-2'>
+          <div className='flex gap-2 my-2 px-4'>
             <h6 className='align-middle self-center text-gray-400 text-base font-display'>
               ผู้เขียน
             </h6>{" "}
@@ -49,7 +49,9 @@ export default function BlogPost({ blog, error }) {
           </div>
           <Divider className='my-2' />
           <br />
-          <MDXComponent>{blog.Content}</MDXComponent>
+          <div className='px-4'>
+            <MDXComponent>{blog.Content}</MDXComponent>
+          </div>
         </div>
         <br />
         <Divider className='my-2' />

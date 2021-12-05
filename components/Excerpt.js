@@ -9,7 +9,7 @@ export default function Excerpt({ excerpt }) {
   return (
     <div className='w-full flex justify-center'>
       <div className='w-full lg:w-4/6  my-8 flex flex-wrap justify-around '>
-        <div className='w-5/6 lg:w-3/6'>
+        <div className='w-5/6 lg:w-3/6 overflow-x-auto'>
           <iframe
             width='560'
             height='315'
@@ -20,7 +20,7 @@ export default function Excerpt({ excerpt }) {
             allowfullscreen
           ></iframe>
         </div>
-        <div className='w-full lg:w-3/6 '>
+        <div className='w-full lg:w-3/6 p-4 text-center  lg:text-left '>
           <MDXComponent>{excerpt.Content}</MDXComponent>
         </div>
       </div>

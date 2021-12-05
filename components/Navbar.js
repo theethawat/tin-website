@@ -35,40 +35,34 @@ export default function Navbar({}) {
           >
             <a
               href='#responsive-header'
-              className='block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
+              className='block mt-4 px-2 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
             >
               <Link href='/blog'>บล็อก </Link>
             </a>
             <a
               href='#responsive-header'
-              className='block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
+              className='block mt-4 px-2 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
             >
               <Link href='/about'>เกี่ยวกับ </Link>
             </a>
             <a
               href='#responsive-header'
-              className='block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
+              className='block mt-4 px-2 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
             >
               <Link href='/portfolio'>แฟ้มสะสมงาน </Link>
             </a>{" "}
             <a
               href='#responsive-header'
-              className='block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
+              className='block mt-4 px-2 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
             >
               <Link href='/project'>Project </Link>
             </a>{" "}
             <a
               href='https://dev.theduckcreator.in.th'
-              className='block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white'
+              className='block mt-4 px-2 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white '
             >
               Server
             </a>
-            <a
-              href='https://shop.theduckcreator.in.th'
-              className='block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
-            >
-              Shop
-            </a>{" "}
           </div>
         </div>
       </nav>{" "}
