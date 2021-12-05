@@ -18,7 +18,6 @@ export default function MDXComponent({ children }) {
       if (level === 1)
         return (
           <h1 className='text-3xl font-semibold font-display my-4'>
-            {" "}
             {children}{" "}
           </h1>
         );
@@ -38,15 +37,22 @@ export default function MDXComponent({ children }) {
         );
       if (level === 4) return <h4 className='text-xl'> {children} </h4>;
       if (level === 5) return <h5 className='text-xl'> {children} </h5>;
-      if (level === 7) return <h6 className='text-xl'> {children} </h6>;
+      if (level === 6) return <h6 className='text-xl'> {children} </h6>;
+      else return <p className='text-xl'>{children}</p>;
     },
     paragraph: ({ children }) => {
       return <p className='my-2 text-lg'> {children} </p>;
+    },
+    blockquote: ({ children }) => {
+      return (
+        <p className='my-2 text-xl font-display italic px-2 '> {children} </p>
+      );
     },
     code: ({ language, value }) => {
       return <pre className='bg-gray-50 font-mono w-2/3 p-1'> {value} </pre>;
     },
   };
+
   return (
     <ReactMarkdown
       className='gap-y-3'
