@@ -135,8 +135,9 @@ module.exports = {
     },
     fontFamily: {
       display: ["kanit", "sans-serif"],
-      dismono: ["Fira Code", "kanit"],
+      dismono: ["kanit"],
       mono: ["Consolas", "Menlo", "Fira Code", "Noto Sans Mono", "Monospaced"],
+      sans: ["Bai Jamjuree"],
     },
   },
   variants: {

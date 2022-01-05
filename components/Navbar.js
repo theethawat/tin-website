@@ -4,7 +4,7 @@ export default function Navbar({}) {
   const [openNavDrawer, setOpenNavDrawer] = useState(false);
   return (
     <div className='lg:sticky lg:top-0 '>
-      <nav className='flex items-center justify-between flex-wrap p-6 bg-steel-50 '>
+      <nav className='flex items-center justify-between flex-wrap p-6 bg-white '>
         <div className='flex items-center flex-no-shrink  mr-6'>
           <span className='font-semibold font-dismono italic text-xl tracking-tight px-2'>
             <Link href='/'>theethawatSpace @TDC</Link>
@@ -13,7 +13,7 @@ export default function Navbar({}) {
         <div className='block lg:hidden '>
           <button
             onClick={() => setOpenNavDrawer(!openNavDrawer)}
-            className='flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white'
+            className='flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-shamrock-500 hover:font-medium hover:border-white'
           >
             <svg
               className='h-3 w-3'
@@ -35,31 +35,31 @@ export default function Navbar({}) {
           >
             <a
               href='#responsive-header'
-              className='block mt-4 px-2 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
+              className='block mt-4 px-2  text-lg lg:inline-block lg:mt-0 text-teal-lighter hover:text-shamrock-500 hover:font-medium mr-4'
             >
               <Link href='/blog'>บล็อก </Link>
             </a>
             <a
               href='#responsive-header'
-              className='block mt-4 px-2 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
+              className='block mt-4 px-2  text-lg lg:inline-block lg:mt-0 text-teal-lighter hover:text-shamrock-500 hover:font-medium mr-4'
             >
               <Link href='/about'>เกี่ยวกับ </Link>
             </a>
             <a
               href='#responsive-header'
-              className='block mt-4 px-2 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
+              className='block mt-4 px-2 text-lg lg:inline-block lg:mt-0 text-teal-lighter hover:text-shamrock-500 hover:font-medium mr-4'
             >
               <Link href='/portfolio'>แฟ้มสะสมงาน </Link>
             </a>{" "}
             <a
               href='#responsive-header'
-              className='block mt-4 px-2 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'
+              className='block mt-4 px-2 text-lg lg:inline-block lg:mt-0 text-teal-lighter hover:text-shamrock-500 hover:font-medium mr-4'
             >
               <Link href='/project'>Project </Link>
             </a>{" "}
             <a
               href='https://dev.theduckcreator.in.th'
-              className='block mt-4 px-2 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white '
+              className='block mt-4 px-2  text-lg lg:inline-block lg:mt-0 text-teal-lighter hover:text-shamrock-500 hover:font-medium '
             >
               Server
             </a>

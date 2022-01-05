@@ -29,31 +29,17 @@ export default function about({ blogs, error }) {
       </Head>
       <div className='my-4'>
         {_.map(blogs, (blog) => (
-          <Box
-            key={blog.id}
-            padding='4'
-            borderRadius='lg'
-            className='shadow-md lg:w-10/12'
-          >
+          <Box key={blog.id} padding='4' borderRadius='lg' className=' my-4 '>
             {" "}
-            <Link className='text-lg font-medium font-display text-gray-500'>
+            <Link className='text-3xl  font-bold font-display text-center  '>
               <NextLink href={"/blogs/" + encodeURIComponent(blog.id)}>
-                {blog.Title}
+                <div className=''>{blog.Title}</div>
               </NextLink>
             </Link>
-            <h6 className='text-sm '>
-              {" "}
-              {moment(blog.EditDate).locale("th").format("DD MMM YYYY")}{" "}
-            </h6>
-            <p className='text-gray-400 mb-3'>{blog.Placeholder}</p>
-            <Divider className='my-2' />
-            <div className='flex gap-2 my-2'>
-              <Avatar
-                src={config.apiURl + blog.AuthorImage}
-                name={blog.Author}
-                size='sm'
-              />
-              <h5 className='align-middle self-center'> {blog.Author} </h5>
+            <div className='flex justify-center'>
+              <p className='text-gray-600 my-4 text-lg lg:w-2/3 text-center'>
+                {blog.Placeholder}
+              </p>
             </div>
           </Box>
         ))}

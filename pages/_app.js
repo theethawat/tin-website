@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Head from "next/head";
 const theme = extendTheme({
@@ -24,9 +25,11 @@ function MyApp({ Component, pageProps }) {
       {/* <Head>
         <link rel='icon' href='/logo.png' />
       </Head> */}
-      <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
-      </ChakraProvider>{" "}
+      <div className='font-sans'>
+        <ChakraProvider theme={theme}>
+          <Component {...pageProps} />
+        </ChakraProvider>{" "}
+      </div>
     </>
   );
 }

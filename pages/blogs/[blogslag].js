@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import Layout from "../../layout/BlogLayout";
 import _ from "lodash";
-import { Avatar, Divider } from "@chakra-ui/react";
 import MDXComponent from "../../components/MDXComponent";
 import moment from "moment";
 import "moment/locale/th";
@@ -31,33 +30,33 @@ export default function BlogPost({ blog, error }) {
             <meta name='OG:image' content={config.apiURl + blog.MainMedia} />
           </Head>
           <div className=' mt-8'>
-            <h1 className='text-4xl font-semibold px-4 font-display '>
+            <h1 className='text-5xl font-semibold px-4 font-display  text-center text-royalblue-700'>
               {" "}
               {blog.Title}{" "}
             </h1>{" "}
-            <div className='flex gap-2 my-2 px-4'>
-              <h6 className='align-middle self-center text-gray-400 text-base font-display'>
-                ผู้เขียน
-              </h6>{" "}
-              <h5 className='align-middle self-center font-display'>
-                {" "}
-                {blog.Author || ""}{" "}
-              </h5>
-              <h6 className='align-middle self-center text-gray-400 text-base font-display'>
-                เขียนเมื่อ{" "}
-                {moment(blog.EditDate || "")
-                  .locale("th")
-                  .format("D MMMM YYYY")}{" "}
-              </h6>
+            <div className='flex justify-center'>
+              <div className='flex gap-2 my-2 px-4'>
+                <h6 className='align-middle self-center text-gray-400 text-base font-display'>
+                  ผู้เขียน
+                </h6>{" "}
+                <h5 className='align-middle self-center font-display'>
+                  {" "}
+                  {blog.Author || ""}{" "}
+                </h5>
+                <h6 className='align-middle self-center text-gray-400 text-base font-display'>
+                  เขียนเมื่อ{" "}
+                  {moment(blog.EditDate || "")
+                    .locale("th")
+                    .format("D MMMM YYYY")}{" "}
+                </h6>
+              </div>
             </div>
-            <Divider className='my-2' />
             <br />
             <div className='px-4'>
               <MDXComponent>{blog.Content}</MDXComponent>
             </div>
           </div>
           <br />
-          <Divider className='my-2' />
         </div>
       </Layout>
     );

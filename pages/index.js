@@ -4,7 +4,7 @@ import axios from "axios";
 import NextLink from "next/link";
 import { Avatar, Box, Link } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { faFeather } from "@fortawesome/free-solid-svg-icons";
 import Layout from "../layout/FrontLayout";
 import Config from "../config.json";
 
@@ -30,33 +30,21 @@ export default function Home({ blogs, error, excerpt }) {
       </Head>
 
       <div className='my-2'>
-        <h2 className='font-display font-semibold  text-3xl mb-2'>
+        <h2 className='font-display font-semibold  text-center text-cerise-600 text-3xl mb-2'>
           บทความ / Articles
         </h2>
         {filteredBlog.map((blog) => (
-          <Box
-            key={blog.id}
-            padding='4'
-            borderRadius='lg'
-            className='shadow-lg  lg:w-9/12 my-4'
-          >
+          <Box key={blog.id} padding='4' borderRadius='lg' className=' my-4 '>
             {" "}
-            <Link className='text-2xl  font-medium font-dismono text-gray-500'>
+            <Link className='text-3xl  font-bold font-display text-center  '>
               <NextLink href={"/blogs/" + encodeURIComponent(blog.id)}>
-                <div>
-                  {" "}
-                  <FontAwesomeIcon icon={faCaretRight} /> {blog.Title}
-                </div>
+                <div className=''>{blog.Title}</div>
               </NextLink>
             </Link>
-            <p className='text-gray-600 my-4 text-lg'>{blog.Placeholder}</p>
-            <div className='flex gap-2 my-2'>
-              <Avatar
-                src={Config.apiURl + blog.AuthorImage}
-                name={blog.Author}
-                size='sm'
-              />
-              <h5 className='align-middle self-center'> {blog.Author} </h5>
+            <div className='flex justify-center'>
+              <p className='text-gray-600 my-4 text-lg lg:w-2/3 text-center'>
+                {blog.Placeholder}
+              </p>
             </div>
           </Box>
         ))}
